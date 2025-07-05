@@ -1,0 +1,80 @@
+{
+  "model": {
+    "n_channels": 64,
+    "n_layers": 4,
+    "dropout": 0.1,
+    "description": "Параметры архитектуры модели"
+  },
+  
+  "training": {
+    "num_epochs": 100,
+    "batch_size": 8,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.00001,
+    "grad_clip_norm": 1.0,
+    "save_interval": 10,
+    "description": "Параметры обучения"
+  },
+  
+  "loss": {
+    "l1_weight": 1.0,
+    "mse_weight": 1.0,
+    "spectral_weight": 0.5,
+    "description": "Веса компонентов функции потерь"
+  },
+  
+  "data": {
+    "train_clean_dir": "data/train/clean",
+    "val_clean_dir": "data/val/clean",
+    "train_noisy_dir": null,
+    "val_noisy_dir": null,
+    "use_synthetic_data": true,
+    "num_workers": 4,
+    "max_files": null,
+    "description": "Настройки данных"
+  },
+  
+  "audio": {
+    "sample_rate": 16000,
+    "chunk_length": 32000,
+    "overlap": 4000,
+    "normalize": true,
+    "description": "Параметры обработки аудио"
+  },
+  
+  "synthetic_data": {
+    "noise_types": ["white", "pink", "brown"],
+    "noise_levels": [0.05, 0.1, 0.15, 0.2],
+    "description": "Настройки синтетических данных"
+  },
+  
+  "augmentation": {
+    "enabled": true,
+    "volume_range": [0.7, 1.3],
+    "additional_noise_prob": 0.3,
+    "additional_noise_range": [0.01, 0.05],
+    "description": "Параметры аугментации данных"
+  },
+  
+  "paths": {
+    "log_dir": "logs",
+    "checkpoint_dir": "checkpoints",
+    "resume_from_checkpoint": null,
+    "description": "Пути к директориям"
+  },
+  
+  "inference": {
+    "batch_size": 4,
+    "device": "auto",
+    "description": "Параметры инференса"
+  },
+  
+  "system": {
+    "random_seed": 42,
+    "deterministic": false,
+    "description": "Системные настройки"
+  },
+  
+  "description": "Конфигурационный файл для системы улучшения вокала",
+  "version": "1.0.0"
+}
